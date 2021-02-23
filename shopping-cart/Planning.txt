@@ -1,0 +1,19 @@
+Overall Layout
+
+
+Actions Planning
+ 1. add an item to the cart
+        - take a look at todo list.
+        - similar to adding input to list 
+
+ 2. see the items in the cart 
+        - take a look at todo list.
+        - similar to displaying the todo list
+
+ 3. remove items from the cart
+        - take a look at todo list.
+        - similar to adding input to list 
+
+
+ 4. see the subtotal of all items added to cart
+    - adding up the property of price for the todo list
