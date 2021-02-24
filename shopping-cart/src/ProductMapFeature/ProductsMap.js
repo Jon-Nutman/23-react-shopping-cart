@@ -1,26 +1,28 @@
 import React from "react"
 import { useState, useEffect } from "react"
+import {fetchProducts, addToCart} from './ProductMapSlice'
+import {selectProductMap} from './ProductMapSlice'
+import {useSelector, useDispatch} from 'react-redux'
+// import addToCart from '../CartFeature/Cart.js'
 
 export default function ProductsMap() {
-  const [products, setProducts] = useState([])
+  const products = useSelector(selectProductMap)
+  const dispatch = useDispatch([])
+  // const [products, setProducts] = useState([])
   useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log("data", data)
-        setProducts(data)
-      })
+   dispatch(fetchProducts())
+   
   }, [])
 
   return (
     <div>
-      <ul className="list-ul">
+      <ul className="list-ul">u
         {products.map((product) => (
           <li className="list-li" key={product.id}>
             <div className="freeship-container">
               <div
                 className={
-                  product.isFreeShipping == true
+                  product.isFreeShipping === true
                     ? "freeshipping-show"
                     : "freeshipping-hide"
                 }
@@ -28,7 +30,7 @@ export default function ProductsMap() {
                 Free Shipping
               </div>
             </div>
-            <img src={product.img.normal} />
+            <img src={product.img.normal} alt='not found' />
             <div className='text-and-price'>
             <span>{product.title}</span>
             <span>
@@ -36,7 +38,7 @@ export default function ProductsMap() {
               {product.price}
             </span>
             </div>
-            <button>Add To Cart</button>
+            <button onClick={() => dispatch(addToCart(product))} >Add To Cart</button>
           </li>
         ))}
       </ul>

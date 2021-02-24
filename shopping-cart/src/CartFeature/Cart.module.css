@@ -1,0 +1,18 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  
+}
+
+.cart{
+  color: red;
+  margin-left: 20%;
+background-color:grey;
+list-style: none;
+padding: 10%;
+}
+
+.ul{
+  list-style: none;
+}
