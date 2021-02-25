@@ -18,6 +18,7 @@ export default function ProductsMap() {
     <div>
       <ul className="list-ul">
         {products.map((product) => (
+          <span onClick={() => dispatch(addToCart(product))}>
           <li className="list-li" key={product.id}>
             <div className="freeship-container">
               <div
@@ -33,13 +34,21 @@ export default function ProductsMap() {
             <img src={product.img.normal} alt='not found' />
             <div className='text-and-price'>
             <span>{product.title}</span>
+            <div className='product-dash'>
+
+            </div>
             <span>
               {product.currencyFormat}
               {product.price}
             </span>
+            <span className='product-installments'>
+             or {product.installments} x ${Math.round((product.price/product.installments)*100)/100}
+            </span>
+
             </div>
-            <button onClick={() => dispatch(addToCart(product))} >Add To Cart</button>
+            <button >Add To Cart</button>
           </li>
+          </span>
         ))}
       </ul>
     </div>

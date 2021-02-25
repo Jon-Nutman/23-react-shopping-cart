@@ -15,6 +15,9 @@ export default function DisplayCart() {
   // console.log(cart)
   return (
     <div className={styles.cart}>
+      <h3>
+        Cart
+      </h3>
       <ul className={styles.ul}>
         {cart.map((product) => (
           <li className={styles.li}>
@@ -22,11 +25,12 @@ export default function DisplayCart() {
             <div className={styles.title}>
             <span>{product.title}</span>
             <span>{product.availableSizes[0]} | {product.style}</span>
+            <span>Quantity: {product.quantity}</span>
             </div>
             <div className={styles.price}>
             <span>
               {product.currencyFormat}
-              {product.price}
+              ${Math.round(((product.price)*(product.quantity))*100)/100}
             </span>
             </div>
           </li>

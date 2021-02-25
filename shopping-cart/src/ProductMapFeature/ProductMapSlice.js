@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, current } from "@reduxjs/toolkit"
 
 export const ProductMapSlice = createSlice({
   name: "productMap",
@@ -12,7 +12,17 @@ export const ProductMapSlice = createSlice({
       state.products = action.payload
     },
     addToCart: (state, action) => {
-      state.cart.push(action.payload)
+      const incomingProduct = {...action.payload, quantity: 1}
+      const isInCart = state.cart.find(product => product.id === incomingProduct.id)
+      console.log()
+      
+      if(!isInCart){
+        state.cart.push(incomingProduct)
+      }else{
+        const cartIndex = state.cart.findIndex(product => product.id === incomingProduct.id)
+        state.cart[cartIndex].quantity ++
+      }
+      
     },
   },
 })
