@@ -5,7 +5,6 @@ import Cart from './CartFeature/Cart'
 function App() {
   return (
     <div className='container'>
-   
    <ProductsMap></ProductsMap>
    <Cart></Cart>
     </div>

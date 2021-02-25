@@ -37,4 +37,6 @@ export const fetchProducts = () => (dispatch) => {
 // in the slice file. For example: `useSelector((state) => state.counter.value)`
 export const selectProductMap = (state) => state.product.products
 
+export const selectCart = (state) => state.product.cart
+
 export default ProductMapSlice.reducer

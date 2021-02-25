@@ -6,13 +6,20 @@
 }
 
 .cart{
-  color: red;
+  color: whitesmoke;
   margin-left: 20%;
-background-color:grey;
+background-color:rgb(69, 69, 69);
 list-style: none;
 padding: 10%;
 }
 
 .ul{
   list-style: none;
+}
+
+.li{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: unset;
+  width: 400px;
 }

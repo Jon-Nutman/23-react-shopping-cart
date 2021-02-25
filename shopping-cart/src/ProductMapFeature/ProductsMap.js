@@ -16,7 +16,7 @@ export default function ProductsMap() {
 
   return (
     <div>
-      <ul className="list-ul">u
+      <ul className="list-ul">
         {products.map((product) => (
           <li className="list-li" key={product.id}>
             <div className="freeship-container">
