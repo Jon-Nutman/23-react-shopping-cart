@@ -12,17 +12,20 @@ export const ProductMapSlice = createSlice({
       state.products = action.payload
     },
     addToCart: (state, action) => {
-      const incomingProduct = {...action.payload, quantity: 1}
-      const isInCart = state.cart.find(product => product.id === incomingProduct.id)
+      const incomingProduct = { ...action.payload, quantity: 1 }
+      const isInCart = state.cart.find(
+        (product) => product.id === incomingProduct.id
+      )
       console.log()
-      
-      if(!isInCart){
+
+      if (!isInCart) {
         state.cart.push(incomingProduct)
-      }else{
-        const cartIndex = state.cart.findIndex(product => product.id === incomingProduct.id)
-        state.cart[cartIndex].quantity ++
+      } else {
+        const cartIndex = state.cart.findIndex(
+          (product) => product.id === incomingProduct.id
+        )
+        state.cart[cartIndex].quantity++
       }
-      
     },
   },
 })

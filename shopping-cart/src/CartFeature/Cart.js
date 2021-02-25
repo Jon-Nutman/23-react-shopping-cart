@@ -9,33 +9,48 @@ export default function DisplayCart() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchProducts())
-    
-   }, [])
-
-  // console.log(cart)
+  }, [])
+  const reducer = (accumulator, currentValue) => accumulator + currentValue
+  console.log(cart)
   return (
     <div className={styles.cart}>
-      <h3>
-        Cart
-      </h3>
+      <h3>Cart</h3>
       <ul className={styles.ul}>
         {cart.map((product) => (
           <li className={styles.li}>
-            <span><img src={product.img.thumb} alt='not found' /></span>
-            <div className={styles.title}>
-            <span>{product.title}</span>
-            <span>{product.availableSizes[0]} | {product.style}</span>
-            <span>Quantity: {product.quantity}</span>
+            <span>
+              <img src={product.img.thumb} alt="not found" />
+            </span>
+            <div className={styles.middleText}>
+              <span>{product.title}</span>
+              <span>
+                {product.availableSizes[0]} | {product.style}{" "}
+              </span>
+              <span>Quantity: {product.quantity}</span>
             </div>
             <div className={styles.price}>
-            <span>
-              {product.currencyFormat}
-              ${Math.round(((product.price)*(product.quantity))*100)/100}
-            </span>
+              <span>
+                {product.currencyFormat}
+                {Math.round(product.price * product.quantity * 100) / 100}
+              </span>
             </div>
           </li>
+          
         ))}
       </ul>
+      <div>
+      <h1>Subtotal</h1>
+      <div> 
+        {cart.map((product) =>(
+          console.log(product.price)
+        // <p> {product.price.reduce(reducer)} </p>
+
+        ))}
+      </div>
+      </div>
+
+
+
     </div>
   )
 }

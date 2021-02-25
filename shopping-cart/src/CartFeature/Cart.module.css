@@ -1,9 +1,8 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-  
 
 /* .cart{
   color: whitesmoke;
@@ -13,17 +12,26 @@ padding-left: 5%;
 width: min-content;
 } */
 
-.ul{
+.ul {
   list-style: none;
 }
 
-.li{
+.li {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 10px;
   justify-self: unset;
   width: 400px;
+  justify-content: center;
+  margin: 5%;
 }
-.price{
+
+.middleText {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
   color: goldenrod;
 }
 
@@ -43,9 +51,9 @@ width: min-content;
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 
   color: whitesmoke;
-  background-color:rgb(53, 53, 53);
+  background-color: rgb(53, 53, 53);
   list-style: none;
-  padding-left: 5%;
+  padding-left: 1%;
 }
 
 /* The navigation menu links */
@@ -74,14 +82,16 @@ width: min-content;
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s;
+  transition: margin-left 0.5s;
   padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the cart (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .cart {padding-top: 15px;}
-  .cart a {font-size: 18px;}
+  .cart {
+    padding-top: 15px;
+  }
+  .cart a {
+    font-size: 18px;
+  }
 }
-
-
