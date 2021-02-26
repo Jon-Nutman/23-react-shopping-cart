@@ -38,6 +38,9 @@ width: min-content;
 /* TEST SIDEBAR */
 
 /* The side navigation menu */
+.carthide{
+  visibility: hidden;
+}
 .cart {
   height: 100%; /* 100% Full-height */
   width: 450px; /* 0 width - change this with JavaScript */

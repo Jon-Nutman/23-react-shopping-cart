@@ -11,9 +11,10 @@ export default function DisplayCart() {
     dispatch(fetchProducts())
   }, [])
   const reducer = (accumulator, currentValue) => accumulator + currentValue
-  console.log(cart)
+  console.log(cart.length)
   return (
-    <div className={styles.cart}>
+    <div className={cart.length > 0 ? styles.cart : styles.carthide}>
+      <h2>X</h2>
       <h3>Cart</h3>
       <ul className={styles.ul}>
         {cart.map((product) => (

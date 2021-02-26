@@ -29,6 +29,7 @@ export const ProductMapSlice = createSlice({
     },
   },
 })
+// middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 
 export const { setProducts, addToCart } = ProductMapSlice.actions
 
